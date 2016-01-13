@@ -1,29 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">
+ 
+<div class="col-md-6">
+<%= image_tag "bag.png", class: "img-responsive" %>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bag.name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @bag.brand %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @bag.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @bag.price %>
-</p>
-
-<p>
-  <strong>Availability:</strong>
-  <%= @bag.availability %>
-</p>
+<div class="col-md-6">
+<h3><%= @bag.name %> by <%= @bag.brand %></h3>
+<p class="justify"><%= @bag.description %></p>
+<h4 class="text-right">$<%= @bag.price.to_f / 100 %></h4>
+</div>
+ 
+</div>
+</div>
 
 <%= link_to 'Edit', edit_bag_path(@bag) %> |
 <%= link_to 'Back', bags_path %>
