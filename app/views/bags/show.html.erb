@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bag.name %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @bag.brand %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bag.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @bag.price %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @bag.availability %>
+</p>
+
+<%= link_to 'Edit', edit_bag_path(@bag) %> |
+<%= link_to 'Back', bags_path %>
