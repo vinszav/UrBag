@@ -4,7 +4,7 @@ class BagsController < ApplicationController
   # GET /bags
   # GET /bags.json
   def index
-    @bags = Bag.all
+    @bags = Bag.where(availability: true)
   end
 
   # GET /bags/1
