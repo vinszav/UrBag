@@ -1,15 +1,18 @@
-<%= simple_form_for(@bag) do |f| %>
+<%= simple_form_for(@bag, htmk: {class: "form-signin"}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :brand %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :availability %>
+  
+    <%= f.input :name, required: true, label: false, placeholder: "Name", input_html: {class: "form-control"} %>
+    <%= f.input :brand, required: true, label: false, placeholder: "Brand",input_html: {class: "form-control"} %>
+    <%= f.input :description, required: true, label: false, placeholder: "Descripton",input_html: {class: "form-control", rows: 5 } %>
+    <%= f.input :price, required: true, label: false, placeholder: "Price",input_html: {class: "form-control"} %>
+
+    <div class="checkbox text-center">
+      <p>Availability<p>
+    <%= f.input :availability, required: true, label: false%>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+
+    <%= f.button :submit, class: "btn btn-primary btn-block" %>
+
 <% end %>
