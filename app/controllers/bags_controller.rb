@@ -1,4 +1,5 @@
 class BagsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_bag, only: [:show, :edit, :update, :destroy]
 
   # GET /bags
@@ -24,7 +25,7 @@ class BagsController < ApplicationController
   # POST /bags
   # POST /bags.json
   def create
-    @bag = Bag.new(bag_params)
+    @bag = current_user.bags.new(bag_params)
 
     respond_to do |format|
       if @bag.save
