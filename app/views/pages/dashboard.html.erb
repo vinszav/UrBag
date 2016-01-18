@@ -1,0 +1,41 @@
+<div class="row">
+	<h1 class= "text-center">Dashboard</h1>
+	<div class = "col-md-4">
+		<h3 class="text-center"> 
+			Bags <%= link_to "New Bag", new_bag_path, class: "btn btn-primary btn-sm" %>
+		</h3>
+
+		<table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Available</th>  
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @bags.each do |bag| %> 
+          <tr>
+            <td><%= bag.id %></td>
+            <td><%= link_to bag.name, bag_path(bag) %></td>
+            <td><%= bag.availability %></td>
+            <td><%= link_to "Edit", edit_bag_path(bag) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+	</div>
+		<div class = "col-md-4">
+		<h3 class="text-center"> 
+			Purchased
+		</h3>
+	</div>
+		<div class = "col-md-4">
+		<h3 class="text-center"> 
+			Sales
+		</h3>
+	</div>
+</div>
+
