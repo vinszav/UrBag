@@ -73,6 +73,6 @@ class BagsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bag_params
-      params.require(:bag).permit(:name, :brand, :description, :price, :availability)
+      params.require(:bag).permit(:name, :brand, :description, :price, :availability, :image)
     end
 end
