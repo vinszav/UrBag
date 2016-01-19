@@ -20,6 +20,7 @@ class BagsController < ApplicationController
 
   # GET /bags/1/edit
   def edit
+    authorize! :manage, @bag
   end
 
   # POST /bags
@@ -42,6 +43,7 @@ class BagsController < ApplicationController
   # PATCH/PUT /bags/1.json
   def update
     respond_to do |format|
+      authorize! :manage, @bag
       if @bag.update(bag_params)
         format.html { redirect_to @bag, notice: 'Bag was successfully updated.' }
         format.json { render :show, status: :ok, location: @bag }
@@ -55,6 +57,7 @@ class BagsController < ApplicationController
   # DELETE /bags/1
   # DELETE /bags/1.json
   def destroy
+    authorize! :manage, @bag
     @bag.destroy
     respond_to do |format|
       format.html { redirect_to bags_url, notice: 'Bag was successfully destroyed.' }
