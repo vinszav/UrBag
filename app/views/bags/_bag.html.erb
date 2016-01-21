@@ -1,0 +1,12 @@
+<div class="col-md-3">
+<div class="thumbnail">
+<%= link_to bag_path(bag) do %>
+<%= image_tag bag.image.url(:original), class: "img-responsive" %>
+<% end %>
+
+<div class="caption">
+<p><strong><%= link_to bag.name, bag_path(bag) %></strong></p>
+<p>$<%= bag.price.to_f / 100 %></p>
+</div>
+</div>
+</div>
