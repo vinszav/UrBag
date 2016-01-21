@@ -1,6 +1,6 @@
-class Transactions_controller < ApplicationController
-	def create 
-		bag = Bag.find_by!(slug: params[:slug])
+class TransactionsController < ApplicationController
+  def create
+  	bag  = Bag.find_by!(slug: params[:slug])
   	token = params[:stripeToken] 
   	
     begin 
@@ -21,10 +21,11 @@ class Transactions_controller < ApplicationController
       redirect_to bag_path(bag), notice: @error
       
      end
-	end
+	
+  end
 
-	def pickup
-		 @sale = Sale.find_by!(guid: params[:guid])
-         @bag = @sale.bag
-	end
-end 
+  def pickup
+    @sale = Sale.find_by!(guid: params[:guid])
+    @bag = @sale.bag
+  end
+end
